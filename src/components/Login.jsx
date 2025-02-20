@@ -1,11 +1,19 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 
 const Login = () => {
-    const [emailId, setEmailId] =  useState('');
-    const [password, setPassword] =  useState('');
+    const [emailId, setEmailId] = useState('vivek@gmail.com');
+    const [password, setPassword] = useState('Vivek@123');
 
-    function handleSubmit() {
-        
+    const handleLogin = async () => {
+        try {
+            const res = await axios.post("http://localhost:3000/login", {
+                emailId,
+                password
+            });
+        } catch (err) {
+            console.error(err);
+        }
     }
 
     return (
@@ -38,13 +46,13 @@ const Login = () => {
                                 type="text"
                                 placeholder="Type here"
                                 className="input input-bordered w-full max-w-xs"
-                                onChange={(e)=> setPassword(e.target.value)}
+                                onChange={(e) => setPassword(e.target.value)}
                             />
                         </label>
                     </div>
 
                     <div className="card-actions justify-center">
-                        <button className="btn btn-primary" onClick={handleSubmit()}>
+                        <button className="btn btn-primary" onClick={handleLogin}>
                             Login
                         </button>
                     </div>
