@@ -13,14 +13,15 @@ const Login = () => {
 
     const handleLogin = async () => {
         try {
-            const res = await axios.post( BASE_URL+"/login", {
+            const res = await axios.post(BASE_URL + "/login", {
                 emailId,
                 password
             },
                 { withCredentials: true }
             );
             dispatch(addUser(res.data));
-            navigate("/");
+            navigate("/"); // navigate to the feed page
+
         } catch (err) {
             console.error(err);
         }
