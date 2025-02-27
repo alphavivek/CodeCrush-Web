@@ -33,7 +33,7 @@ const Feed = () => {
       {
         feed
         &&
-        <UserCard user={feed}/>
+        <UserCard user={feed[0]}/>
       }
     </div>
   )
