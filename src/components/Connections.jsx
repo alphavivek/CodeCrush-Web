@@ -35,13 +35,13 @@ const Connections = () => {
                 const { _id, firstName, lastName, gender, age, about, photoUrl } = connection;
 
                 return (
-                    <div key={_id} className='flex bg-base-200 m-4 p-4 rounded-lg w-1/2 mx-auto'>
+                    <div key={_id} className='flex items-center bg-base-200 m-4 p-4 rounded-lg w-1/2 mx-auto'>
                         <div>
                             <img src={photoUrl || "https://www.pngall.com/wp-content/uploads/5/Profile-Male-Transparent.png"} alt="photo"
                                 className='w-20 h-20 rounded-full'
                             />
                         </div>
-                        <div className='mx-4 text-left'>
+                        <div className='mx-6 text-left'>
                             <h2 className='font-bold text-xl'>{firstName + " " + lastName}</h2>
                             {age && gender && <p>{age + ", " + gender}</p>}
                             <p>{about}</p>
