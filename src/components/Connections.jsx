@@ -30,12 +30,12 @@ const Connections = () => {
 
     return (
         <div className='text-center my-10'>
-            <h1 className='font-bold text-2xl'>Hello Connections</h1>
+            <h1 className='font-bold text-2xl'>Connections</h1>
             {connections.map((connection) => {
-                const { firstName, lastName, gender, age, about, photoUrl } = connection;
+                const { _id, firstName, lastName, gender, age, about, photoUrl } = connection;
 
                 return (
-                    <div className='flex bg-base-200 m-4 p-4 rounded-lg w-1/2 mx-auto'>
+                    <div key={_id} className='flex bg-base-200 m-4 p-4 rounded-lg w-1/2 mx-auto'>
                         <div>
                             <img src={photoUrl || "https://www.pngall.com/wp-content/uploads/5/Profile-Male-Transparent.png"} alt="photo"
                                 className='w-20 h-20 rounded-full'
