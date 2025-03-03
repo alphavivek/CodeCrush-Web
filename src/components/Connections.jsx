@@ -26,7 +26,15 @@ const Connections = () => {
     }, []);
 
     if (!connections) return;
-    if (connections.length == 0) return <h1>No Connections Found</h1>;
+    if (connections.length == 0) {
+        return (
+            <div className='flex flex-col justify-center items-center my-10'>
+                <h1 className='my-10 font-bold text-xl'>No Connections Found</h1>
+                <img className='w-20 h-20'
+                src={"../No_Connections_Found.png"} alt="image" />
+            </div>
+        )
+    };
 
     return (
         <div className='text-center my-10'>
